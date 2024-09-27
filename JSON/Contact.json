@@ -1,0 +1,11 @@
+{
+    "contactInfo": {
+        "email": "info@veiligheidsapp.nl",
+        "phone": "012-3456789",
+        "socials": {
+            "facebook": "https://facebook.com/veiligheidsapp",
+            "twitter": "https://twitter.com/veiligheidsapp",
+            "linkedin": "https://linkedin.com/company/veiligheidsapp"
+        }
+    }
+}

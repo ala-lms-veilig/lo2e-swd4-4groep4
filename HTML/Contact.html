@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Veiligheidsapp</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Veiligheidsapp</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="melding.html.">Meldingen</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Neem contact met ons op</h2>
+        <form id="contact-form">
+            <label for="name">Naam:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Bericht:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Verstuur</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Contactinformatie: info@veiligheidsapp.nl | Telefoon: 012-3456789</p>
+        <p>Volg ons op sociale media: 
+            <a href="#">Facebook</a>, 
+            <a href="#">Twitter</a>, 
+            <a href="#">LinkedIn</a>
+        </p>
+    </footer>
+
+    <div id="popup-message"></div>
+
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>
