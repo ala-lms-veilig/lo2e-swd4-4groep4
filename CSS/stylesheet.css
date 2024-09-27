@@ -1,11 +1,9 @@
-/* Algemene reset voor een consistente stijl */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -15,7 +13,6 @@ body {
     height: 100vh;
 }
 
-/* Container voor het inlogformulier */
 .login-container {
     background-color: white;
     padding: 20px 40px;
@@ -26,14 +23,12 @@ body {
     text-align: center;
 }
 
-/* Form titel */
 .login-container h2 {
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
 }
 
-/* Labels voor invoervelden */
 .login-container label {
     display: block;
     text-align: left;
@@ -42,7 +37,6 @@ body {
     color: #333;
 }
 
-/* Invoervelden styling */
 .login-container input {
     width: 100%;
     padding: 10px;
@@ -52,7 +46,6 @@ body {
     font-size: 16px;
 }
 
-/* Button styling */
 .login-container button {
     width: 100%;
     padding: 12px;
@@ -65,12 +58,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
 .login-container button:hover {
     background-color: #ec4a67;
 }
 
-/* Fout- of succesbericht na login */
 #message {
     margin-top: 15px;
     font-size: 14px;
