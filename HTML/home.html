@@ -51,14 +51,18 @@
 <body>
 
     <header>
-        <h1>Veiligheidsapp</h1>
         <nav>
             <a href="home.html">Home</a>
             <a href="melding.html">Meldingen</a>
             <a href="contact.html">Contact</a>
-            <!-- Voeg hier de inlogknop toe -->
-            <button class="login-btn" onclick="window.location.href='index.html'">Inloggen</button>
+            authArea.innerHTML = `<p>Welkom, ${username}!</p> <button onclick="logout()">Uitloggen</button>`;
+
+            <div id="auth-area">
+                <!-- Dit wordt dynamisch aangepast door JavaScript -->
+                <button class="login-btn" onclick="window.location.href='index.html'">Inloggen</button>
+            </div>
         </nav>
+        
     </header>
 
     <main>

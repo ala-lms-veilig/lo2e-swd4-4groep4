@@ -7,17 +7,22 @@
     <link rel="stylesheet" href="../CSS/stylesheet.css">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Inloggen</h2>
-        <form id="loginForm">
-            <label for="username">Gebruikersnaam:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Wachtwoord:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <button type="submit">Inloggen</button>
-        </form>
+        <div class="login-container">
+            <h2>Inloggen</h2>
+            <form id="loginForm">
+                <label for="username">Gebruikersnaam:</label>
+                <input type="text" id="username" name="username" required>
+        
+                <label for="password">Wachtwoord:</label>
+                <input type="password" id="password" name="password" required>
+        
+                <button type="submit">Inloggen</button>
+            </form>
+            <div id="message"></div>
+        
+            <p>Nog geen account? <a href="register.html">Registreer hier</a></p>
+        </div>
+        
         <div id="message"></div>
     </div>
     <script src="/Javascript/app.js"></script>

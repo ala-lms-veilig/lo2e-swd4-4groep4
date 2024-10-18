@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registreren</title>
+    <link rel="stylesheet" href="../CSS/stylesheet.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Registreren</h2>
+        <form id="registerForm">
+            <label for="newUsername">Nieuwe gebruikersnaam:</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+
+            <label for="newPassword">Nieuw wachtwoord:</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+
+            <button type="submit">Registreren</button>
+        </form>
+        <div id="registerMessage"></div>
+
+        <p>Heb je al een account? <a href="index.html">Log hier in</a></p> <!-- Link naar de inlogpagina -->
+    </div>
+
+    <script src="/Javascript/app.js"></script>
+</body>
+</html>

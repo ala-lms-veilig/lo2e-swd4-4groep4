@@ -70,3 +70,17 @@ class ContactPage {
 document.addEventListener('DOMContentLoaded', () => {
     const contactPage = new ContactPage('contact.json');
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Controleer of de gebruiker is ingelogd door localStorage te controleren
+    const username = localStorage.getItem('loggedInUser');
+    const authArea = document.getElementById('auth-area');
+
+    if (username) {
+        // Als de gebruiker is ingelogd, toon een welkomstbericht
+        authArea.innerHTML = `<p>Welkom, ${username}!</p>`;
+    } else {
+        // Als de gebruiker niet is ingelogd, toon de inlogknop
+        authArea.innerHTML = `<button class="login-btn" onclick="window.location.href='index.html'">Inloggen</button>`;
+    }
+});
