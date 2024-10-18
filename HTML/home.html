@@ -18,7 +18,7 @@
         }
 
         .content-right {
-            width: 335%;
+            width: 30%;
         }
 
         .agenda {
@@ -45,24 +45,44 @@
         .login-btn:hover {
             background-color: #0056b3;
         }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #auth-area {
+            display: flex;
+            align-items: center;
+        }
+
+        #auth-area p {
+            margin-right: 20px;
+        }
+
+        #auth-area button {
+            margin-left: 20px;
+        }
     </style>
 </head>
 
 <body>
 
     <header>
+        <h1>Veiligheidsapp</h1>
         <nav>
-            <a href="home.html">Home</a>
-            <a href="melding.html">Meldingen</a>
-            <a href="contact.html">Contact</a>
-            authArea.innerHTML = `<p>Welkom, ${username}!</p> <button onclick="logout()">Uitloggen</button>`;
-
+            <div>
+                <a href="home.html">Home</a>
+                <a href="melding.html">Meldingen</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <!-- Auth gebied voor login/welkom -->
             <div id="auth-area">
-                <!-- Dit wordt dynamisch aangepast door JavaScript -->
+                <!-- Dit zal door JavaScript worden bijgewerkt -->
                 <button class="login-btn" onclick="window.location.href='index.html'">Inloggen</button>
             </div>
         </nav>
-        
     </header>
 
     <main>
@@ -100,7 +120,31 @@
 
     <div id="popup-message"></div>
 
-    <script src="../JS/script.js"></script>
-</body>
+    <script>
+        // Zodra de pagina is geladen, controleer de login-status
+        document.addEventListener("DOMContentLoaded", function () {
+            // Controleer of de gebruiker is ingelogd door localStorage te controleren
+            const username = localStorage.getItem('loggedInUser');
+            const authArea = document.getElementById('auth-area');
 
+            if (username) {
+                // Als de gebruiker is ingelogd, toon een welkomstbericht en uitlogknop
+                authArea.innerHTML = `<p>Welkom, ${username}!</p> <button onclick="logout()">Uitloggen</button>`;
+            } else {
+                // Als de gebruiker niet is ingelogd, toon de inlogknop
+                authArea.innerHTML = `<button class="login-btn" onclick="window.location.href='index.html'">Inloggen</button>`;
+            }
+        });
+
+        // Functie om uit te loggen
+        function logout() {
+            // Verwijder de ingelogde gebruiker uit localStorage
+            localStorage.removeItem('loggedInUser');
+
+            // Verwijder ook de gebruikersnaam uit localStorage
+            window.location.href = 'index.html'; // Terug naar de inlogpagina
+        }
+    </script>
+
+</body>
 </html>
