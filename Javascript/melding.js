@@ -1,18 +1,50 @@
-document.getElementById('notificationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", function() {
+    const meldingForm = document.getElementById("meldingForm");
+    const meldingenLijst = document.getElementById("meldingenLijst");
 
-    const titel = document.getElementById('meldingTitel').value.trim();
-    const beschrijving = document.getElementById('meldingBeschrijving').value.trim();
+    // Laad meldingen uit localStorage
+    const opgeslagenMeldingen = JSON.parse(localStorage.getItem("meldingen")) || [];
+    opgeslagenMeldingen.forEach(melding => voegMeldingToeAanLijst(melding));
 
-    if (titel && beschrijving) {
-        document.getElementById('meldingTitel').value = '';
-        document.getElementById('meldingBeschrijving').value = '';
+    // Functie om een melding op te slaan
+    meldingForm.addEventListener("submit", function(e) {
+        e.preventDefault();
 
-        const popupMessage = document.getElementById('popup-message');
-        popupMessage.classList.add('show');
+        const scenario = document.getElementById("scenario").value;
+        const toren = document.getElementById("toren").value;
+        const verdieping = document.getElementById("verdieping").value;
+        const beschrijving = document.getElementById("beschrijving").value;
 
-        setTimeout(() => {
-            popupMessage.classList.remove('show');
-        }, 3000);
+        // Maak melding object
+        const melding = {
+            scenario,
+            toren,
+            verdieping,
+            beschrijving,
+            tijd: new Date().toLocaleString()
+        };
+
+        // Sla de melding op in localStorage
+        opgeslagenMeldingen.push(melding);
+        localStorage.setItem("meldingen", JSON.stringify(opgeslagenMeldingen));
+
+        // Voeg melding toe aan de lijst
+        voegMeldingToeAanLijst(melding);
+
+        // Formulier resetten
+        meldingForm.reset();
+    });
+
+    // Functie om een melding toe te voegen aan de lijst
+    function voegMeldingToeAanLijst(melding) {
+        const meldingDiv = document.createElement("div");
+        meldingDiv.classList.add("melding");
+        meldingDiv.innerHTML = `
+            <strong>${melding.scenario}</strong> in <strong>${melding.toren}</strong>, <strong>${melding.verdieping}</strong><br>
+            <em>${melding.tijd}</em><br>
+            <p>${melding.beschrijving}</p>
+            <hr>
+        `;
+        meldingenLijst.appendChild(meldingDiv);
     }
 });

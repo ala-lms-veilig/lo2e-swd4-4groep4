@@ -1,38 +1,53 @@
 <!DOCTYPE html>
-<html lang="nl">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Veiligheidsapp</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Contact Pagina</title>
+    <link rel="stylesheet" href="../CSS/contact.css">
 </head>
-
 <body>
     <header>
         <h1>Veiligheidsapp</h1>
         <nav>
-            <a href="home.html">Home</a>
-            <a href="melding.html">Meldingen</a>
-            <a href="contact.html">Contact</a>
+            <div>
+                <a href="home.html">Home</a>
+                <a href="melding.html">Meldingen</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div id="auth-area">
+                <button class="login-btn" onclick="window.location.href='index.html'">Inloggen</button>
+            </div>
         </nav>
     </header>
+    <div class="container">
+        <div class="contact-form">
+            <h2>Contacteer ons</h2>
+            <form id="contactForm">
+                <label for="naam">Naam:</label>
+                <input type="text" id="naam" required placeholder="Jouw naam">
 
-    <main>
-        <h2>Neem contact met ons op</h2>
-        <form id="contact-form">
-            <label for="name">Naam:</label>
-            <input type="text" id="name" name="name" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required placeholder="Jouw e-mail">
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+                <label for="onderwerp">Onderwerp:</label>
+                <input type="text" id="onderwerp" required placeholder="Onderwerp van de vraag">
 
-            <label for="message">Bericht:</label>
-            <textarea id="message" name="message" required></textarea>
+                <label for="bericht">Bericht:</label>
+                <textarea id="bericht" required placeholder="Schrijf hier je bericht"></textarea>
 
-            <button type="submit">Verstuur</button>
-        </form>
-    </main>
+                <button type="submit">Verzenden</button>
+            </form>
+        </div>
+
+        <div class="concierge-info">
+            <h2>Contact informatie</h2>
+            <p><strong>Conciërge:</strong> John Doe</p>
+            <p><strong>Telefoon:</strong> 0123-456789</p>
+            <p><strong>E-mail:</strong> concierge@gebouw.com</p>
+            <p><strong>Adres:</strong> Gebouwstraat 123, 1000 AB Stad</p>
+        </div>
+    </div>
 
     <footer>
         <p>Contactinformatie: info@veiligheidsapp.nl | Telefoon: 012-3456789</p>
@@ -43,9 +58,6 @@
         </p>
     </footer>
 
-    <div id="popup-message"></div>
-
-    <script src="../JS/script.js"></script>
+    <script src="../Javascript/script.js"></script>
 </body>
-
 </html>

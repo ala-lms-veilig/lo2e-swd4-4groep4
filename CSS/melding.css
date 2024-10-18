@@ -1,3 +1,67 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#meldingenLijst {
+    margin-top: 20px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+
+
+/* Algemeen */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -5,18 +69,17 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    min-height: 100vh; /* Zorgt ervoor dat de body de volledige hoogte van het scherm vult */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+    flex-direction: column; /* Maakt flexbox voor de body */
 }
 
+/* Header */
 header {
     background-color: #2E0E4A;
     color: #fff;
     padding: 10px 0;
     text-align: center;
-    width: 100%;
 }
 
 header h1 {
@@ -24,30 +87,26 @@ header h1 {
     font-size: 24px;
 }
 
-header nav {
-    margin-top: 5px;
-}
-
 header nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 15px;
-    padding: 5px;
 }
 
 header nav a:hover {
     text-decoration: underline;
 }
 
+/* Main content vult de resterende ruimte */
 main {
-    max-width: 600px;
-    margin: 20px;
+    flex: 1; /* Zorgt ervoor dat main de resterende ruimte vult */
+    max-width: 900px; /* Breder gemaakt voor grotere schermen */
+    width: 100%; /* Laat het zich aanpassen aan het scherm */
+    margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    width: 90%;
 }
 
 main h2 {
@@ -56,6 +115,7 @@ main h2 {
     margin-bottom: 20px;
 }
 
+/* Formulier styling */
 form label {
     display: block;
     margin: 10px 0 5px;
@@ -64,6 +124,7 @@ form label {
 }
 
 form input[type="text"],
+form input[type="email"],
 form textarea {
     width: 100%;
     padding: 10px;
@@ -92,12 +153,15 @@ form button:hover {
     background-color: #d83a56;
 }
 
+/* Footer altijd onderaan */
 footer {
     background-color: #2E0E4A;
     color: #fff;
     text-align: center;
     padding: 15px 0;
-    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    width: 100%; /* Zorgt ervoor dat de footer de volledige breedte inneemt */
 }
 
 footer a {
@@ -110,6 +174,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Pop-up bericht styling */
 #popup-message {
     display: none;
     position: fixed;
@@ -129,21 +194,89 @@ footer a:hover {
     display: block;
 }
 
-#popup-message {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #2E0E4A;
-    color: #fff;
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-size: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
+/* Specifieke styling voor afbeelding en layout */
+.content-right img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-top: 100px; /* Meer ruimte boven de afbeelding */
 }
 
-#popup-message.show {
-    display: block;
+.agenda {
+    margin-top: 90px; /* Extra ruimte tussen de agenda en andere elementen */
 }
+
+main .content-left {
+    margin-bottom: 40px; /* Vergroot de afstand tussen de tekst en agenda */
+    margin-right: 30px; /* Voeg extra ruimte aan de rechterkant toe */
+}
+
+main .agenda {
+    margin-top: 50px; /* Verhoog de marge boven de agenda */
+}
+
+main .content {
+    margin-bottom: 30px; /* Extra ruimte onder de tekst */
+    padding: 20px; /* Voeg padding toe om de tekst verder van de randen te plaatsen */
+}
+
+
+
+        /* Voeg CSS toe voor de indeling */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .content-left {
+            width: 70%;
+        }
+
+        .content-right {
+            width: 30%;
+        }
+
+        .agenda {
+            margin-top: 80px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .login-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .login-btn:hover {
+            background-color: #0056b3;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #auth-area {
+            display: flex;
+            align-items: center;
+        }
+
+        #auth-area p {
+            margin-right: 20px;
+        }
+
+        #auth-area button {
+            margin-left: 20px;
+        }

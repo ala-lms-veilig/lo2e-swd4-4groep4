@@ -3,42 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melding</title>
+    <title>Melding Pagina</title>
     <link rel="stylesheet" href="../CSS/melding.css">
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veiligheidsapp</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Veiligheidsapp</h1>
         <nav>
-            <a href="home.html">Home</a>
-            <a href="melding.html">Meldingen</a>
-            <a href="contact.html">Contact</a>
+            <div>
+                <a href="home.html">Home</a>
+                <a href="melding.html">Meldingen</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div id="auth-area">
+                <button class="login-btn" onclick="window.location.href='index.html'">Inloggen</button>
+            </div>
         </nav>
     </header>
+    <div class="container">
+        <h1>Melding Pagina</h1>
+        <form id="meldingForm">
+            <label for="scenario">Kies een scenario:</label>
+            <select id="scenario" required>
+                <option value="Brand">Brand</option>
+                <option value="Inbraak">Inbraak</option>
+                <option value="Medisch">Medisch incident</option>
+            </select>
 
-    <main>
-        <h2>Melding maken</h2>
-        <form id="notificationForm">
-            <label for="meldingTitel">Naam</label>
-            <input type="text" id="meldingTitel" placeholder="Geef je naam op" required>
+            <label for="toren">Kies een toren:</label>
+            <select id="toren" required>
+                <option value="Toren 1">Toren 1</option>
+                <option value="Toren 2">Toren 2</option>
+                <option value="Toren 3">Toren 3</option>
+            </select>
 
-            <label for="meldingBeschrijving">Beschrijving</label>
-            <textarea id="meldingBeschrijving" placeholder="Beschrijf de melding" required></textarea>
+            <label for="verdieping">Kies een verdieping:</label>
+            <select id="verdieping" required>
+                <script>
+                    for (let i = 1; i <= 9; i++) {
+                        document.write(`<option value="Verdieping ${i}">Verdieping ${i}</option>`);
+                    }
+                </script>
+            </select>
 
-            <button type="submit">Melding versturen</button>
+            <label for="beschrijving">Beschrijving van het incident:</label>
+            <textarea id="beschrijving" placeholder="Schrijf wat er gebeurd is" required></textarea>
+
+            <button type="submit">Melding opslaan</button>
         </form>
 
-        <div id="popup-message">Melding succesvol toegevoegd!</div>
-    </main>
+        <h2>Opgeslagen Meldingen</h2>
+        <div id="meldingenLijst"></div>
+    </div>
 
     <footer>
         <p>Contactinformatie: info@veiligheidsapp.nl | Telefoon: 012-3456789</p>
@@ -48,12 +64,7 @@
             <a href="#">LinkedIn</a>
         </p>
     </footer>
-    <div id="popup-message"></div>
-    <script src="script.js"></script>
-</body>
-</html>
 
-
-    <script src="melding.js"></script>
+    <script src="../Javascript/melding.js"></script>
 </body>
 </html>
