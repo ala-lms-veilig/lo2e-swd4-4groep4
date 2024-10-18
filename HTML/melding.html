@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melding</title>
+    <link rel="stylesheet" href="../CSS/melding.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veiligheidsapp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Veiligheidsapp</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="melding.html">Meldingen</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Melding maken</h2>
+        <form id="notificationForm">
+            <label for="meldingTitel">Naam</label>
+            <input type="text" id="meldingTitel" placeholder="Geef je naam op" required>
+
+            <label for="meldingBeschrijving">Beschrijving</label>
+            <textarea id="meldingBeschrijving" placeholder="Beschrijf de melding" required></textarea>
+
+            <button type="submit">Melding versturen</button>
+        </form>
+
+        <div id="popup-message">Melding succesvol toegevoegd!</div>
+    </main>
+
+    <footer>
+        <p>Contactinformatie: info@veiligheidsapp.nl | Telefoon: 012-3456789</p>
+        <p>Volg ons op sociale media: 
+            <a href="#">Facebook</a>, 
+            <a href="#">Twitter</a>, 
+            <a href="#">LinkedIn</a>
+        </p>
+    </footer>
+    <div id="popup-message"></div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+    <script src="melding.js"></script>
+</body>
+</html>

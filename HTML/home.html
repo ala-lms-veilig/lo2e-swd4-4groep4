@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Veiligheidsapp</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Voeg CSS toe voor de indeling */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .content-left {
+            width: 70%;
+        }
+
+        .content-right {
+            width: 335%;
+        }
+
+        .agenda {
+            margin-top: 80px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .login-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .login-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Veiligheidsapp</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="melding.html">Meldingen</a>
+            <a href="contact.html">Contact</a>
+            <!-- Voeg hier de inlogknop toe -->
+            <button class="login-btn" onclick="window.location.href='index.html'">Inloggen</button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="content-left">
+                <h2>Welkom bij de Veiligheidsapp</h2>
+                <p>Met deze app kunt u meldingen maken, uw veiligheid waarborgen en op de hoogte blijven van belangrijke updates.</p>
+                
+                <!-- Voeg hier de agenda toe -->
+                <div class="agenda">
+                    <h3>Agenda</h3>
+                    <ul>
+                        <li>13 oktober - Veiligheidsworkshop</li>
+                        <li>20 oktober - Webinar: Noodgevallen beheren</li>
+                        <li>25 oktober - Q&A sessie met experts</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-right">
+                <!-- Afbeelding rechts -->
+                <img src="/img/DaVinciLammenschans-1800x900-1-1800x900.jpg" alt="Veiligheidsapp Afbeelding">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Contactinformatie: info@veiligheidsapp.nl | Telefoon: 012-3456789</p>
+        <p>Volg ons op sociale media: 
+            <a href="#">Facebook</a>, 
+            <a href="#">Twitter</a>, 
+            <a href="#">LinkedIn</a>
+        </p>
+    </footer>
+
+    <div id="popup-message"></div>
+
+    <script src="../JS/script.js"></script>
+</body>
+
+</html>
