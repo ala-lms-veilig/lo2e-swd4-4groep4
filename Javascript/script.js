@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const onderwerp = document.getElementById("onderwerp").value;
         const bericht = document.getElementById("bericht").value;
 
-        // Maak bericht object
         const contactBericht = {
             naam,
             email,
@@ -18,16 +17,12 @@ document.addEventListener("DOMContentLoaded", function() {
             tijd: new Date().toLocaleString()
         };
 
-        // Haal bestaande berichten op uit localStorage
         const opgeslagenBerichten = JSON.parse(localStorage.getItem("contactBerichten")) || [];
 
-        // Voeg nieuw bericht toe
         opgeslagenBerichten.push(contactBericht);
 
-        // Sla de berichten op in localStorage
         localStorage.setItem("contactBerichten", JSON.stringify(opgeslagenBerichten));
 
-        // Reset het formulier na succesvol opslaan
         contactForm.reset();
 
         alert("Je bericht is verzonden en opgeslagen.");
