@@ -1,50 +1,50 @@
-// Controleer of er al gebruikers in localStorage zijn, zo niet, maak een leeg object
+// zijn er geb leeg
 let users = JSON.parse(localStorage.getItem('users')) || {};
 
-// Voeg de registratie functionaliteit toe
+// Voeg regi functie
 const registerForm = document.getElementById('registerForm');
-if (registerForm) { // Controleer of je op de registratiepagina bent
+if (registerForm) { // bent je op regpagi
     registerForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
         const newUsername = document.getElementById('newUsername').value;
         const newPassword = document.getElementById('newPassword').value;
 
-        // Controleer of de gebruikersnaam al bestaat
+        // bestaat geb
         if (users[newUsername]) {
             document.getElementById('registerMessage').innerHTML = 'Gebruikersnaam bestaat al.';
         } else {
-            // Voeg de nieuwe gebruiker toe aan het users object
+            // nieuwe geb
             users[newUsername] = newPassword;
             
-            // Sla de bijgewerkte gebruikers op in localStorage
+            // opslaan geb local
             localStorage.setItem('users', JSON.stringify(users));
 
             document.getElementById('registerMessage').innerHTML = 'Registratie succesvol!';
 
-            // Na registratie, doorsturen naar de inlogpagina
+            // na reg naar home
             setTimeout(() => {
-                window.location.href = 'index.html'; // Terug naar inlogpagina
-            }, 2000); // Wacht 2 seconden voor doorsturen
+                window.location.href = 'index.html'; // naar inlog
+            }, 2000); // w8 2sec
         }
     });
 }
 
-// Haal de gebruikers uit localStorage
+// Haal gebr uit local
 let storedUsers = JSON.parse(localStorage.getItem('users')) || {};
 
-// Voeg de inlog functionaliteit toe
+// inlog funtie voe
 const loginForm = document.getElementById('loginForm');
-if (loginForm) { // Controleer of je op de inlogpagina bent
+if (loginForm) { // Controleer of login
     loginForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
-        // Controleer of de gebruikersnaam en wachtwoord correct zijn
+        // Controleer of geb klopt
         if (storedUsers[username] && storedUsers[username] === password) {
-            // Redirect naar de homepage of dashboard
+            // ga home
             window.location.href = 'home.html';
         } else {
             document.getElementById('message').innerHTML = 'Ongeldige gebruikersnaam of wachtwoord';
@@ -58,12 +58,12 @@ loginForm.addEventListener('submit', (e) => {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Controleer of de gebruikersnaam en wachtwoord correct zijn
+    // klopt us en pas
     if (storedUsers[username] && storedUsers[username] === password) {
-        // Sla de gebruikersnaam op in localStorage
+        // opslaan geb
         localStorage.setItem('loggedInUser', username);
 
-        // Redirect naar de homepagina
+        // naar home
         window.location.href = 'home.html';
     } else {
         document.getElementById('message').innerHTML = 'Ongeldige gebruikersnaam of wachtwoord';
