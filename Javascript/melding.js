@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const opgeslagenMeldingen = JSON.parse(localStorage.getItem("meldingen")) || [];
     opgeslagenMeldingen.forEach(melding => voegMeldingToeAanLijst(melding));
 
-    // Functie om een melding op te slaan
+    // meldingen opslaan
     meldingForm.addEventListener("submit", function(e) {
         e.preventDefault();
 
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const verdieping = document.getElementById("verdieping").value;
         const beschrijving = document.getElementById("beschrijving").value;
 
-        // Maak melding object
+        // melding maken
         const melding = {
             scenario,
             toren,
@@ -24,18 +24,18 @@ document.addEventListener("DOMContentLoaded", function() {
             tijd: new Date().toLocaleString()
         };
 
-        // Sla de melding op in localStorage
+        // opslaan in de localStorage
         opgeslagenMeldingen.push(melding);
         localStorage.setItem("meldingen", JSON.stringify(opgeslagenMeldingen));
 
-        // Voeg melding toe aan de lijst
+        // Meldingen toevoegen
         voegMeldingToeAanLijst(melding);
 
-        // Formulier resetten
+        // Resetten
         meldingForm.reset();
     });
 
-    // Functie om een melding toe te voegen aan de lijst
+    // Meldingen toevoegen aan de lijst
     function voegMeldingToeAanLijst(melding) {
         const meldingDiv = document.createElement("div");
         meldingDiv.classList.add("melding");
