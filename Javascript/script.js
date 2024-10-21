@@ -1,10 +1,10 @@
 //Wachten tot de hele pagina geladen is
 document.addEventListener("DOMContentLoaded", function() {
     
-    //formulier selecteren 
+    //Formulier selecteren 
     const contactForm = document.getElementById("contactForm");
     
-    //versturen van het formulier
+    //Versturen van het formulier
     contactForm.addEventListener("submit", function(e) {
         
         //Voorkomen dat de pagina opnieuw laadt
@@ -25,14 +25,14 @@ document.addEventListener("DOMContentLoaded", function() {
             tijd: new Date().toLocaleString()
         };
         
-        //Ophalen van reeds opgeslagen berichten uit de browser
+        //Opgeslagen berichten ophalen
         const opgeslagenBerichten = JSON.parse(localStorage.getItem("contactBerichten")) || [];
 
-        //Het nieuwe bericht aan de lijst toevoegen en opslaan
+        //Nieuw bericht toevoegen aan de lijst
         opgeslagenBerichten.push(contactBericht);
         localStorage.setItem("contactBerichten", JSON.stringify(opgeslagenBerichten));
 
-        //Het formulier resetten en de gebruiker informeren
+        //Formulier resetten 
         contactForm.reset();
         alert("Je bericht is verzonden en opgeslagen.");
     });
