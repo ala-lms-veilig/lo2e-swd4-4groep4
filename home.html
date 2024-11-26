@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Veiligheidsapp</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .content-left {
+            width: 70%;
+        }
+
+        .content-right {
+            width: 30%;
+        }
+
+        .agenda {
+            margin-top: 80px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .login-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .login-btn:hover {
+            background-color: #0056b3;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #auth-area {
+            display: flex;
+            align-items: center;
+        }
+
+        #auth-area p {
+            margin-right: 20px;
+        }
+
+        #auth-area button {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Veiligheidsapp</h1>
+        <nav>
+            <div>
+                <a href="home.html">Home</a>
+                <a href="melding.html">Meldingen</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div id="auth-area">
+                <button class="login-btn" onclick="window.location.href='index.html'">Inloggen</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="content-left">
+                <h2>Welkom bij de Veiligheidsapp</h2>
+                <p>Met deze app kunt u meldingen maken, uw veiligheid waarborgen en op de hoogte blijven van belangrijke updates.</p>
+
+            <div class="content-right">
+                <img src="/img/DaVinciLammenschans-1800x900-1-1800x900.jpg" alt="Veiligheidsapp Afbeelding">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Contactinformatie: info@veiligheidsapp.nl | Telefoon: 012-3456789</p>
+        <p>Volg ons op sociale media: 
+            <a href="#">Facebook</a>, 
+            <a href="#">Twitter</a>, 
+            <a href="#">LinkedIn</a>
+        </p>
+    </footer>
+
+    <div id="popup-message"></div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const username = localStorage.getItem('loggedInUser');
+            const authArea = document.getElementById('auth-area');
+
+            if (username) {
+                authArea.innerHTML = `<p>Welkom, ${username}!</p> <button onclick="logout()">Uitloggen</button>`;
+            } else {
+                authArea.innerHTML = `<button class="login-btn" onclick="window.location.href='index.html'">Inloggen</button>`;
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'index.html';
+        }
+    </script>
+
+</body>
+</html>
